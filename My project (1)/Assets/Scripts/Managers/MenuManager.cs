@@ -21,20 +21,21 @@ public class MenuManager : MonoBehaviour
             Debug.LogWarning("[MenuManager] GameManager.Instance is null. Did you add GameManager to MainMenu?");
         }
 
-     
+        // safety reset if pool manager already exists in current runtime
         //if (CoinPoolManager.Instance != null)
-            //{
-            //    CoinPoolManager.Instance.ResetCoins();
-            //}
+        //{
+        //    CoinPoolManager.Instance.ResetCoins();
+        //}
 
-        if (string.IsNullOrEmpty(gameSceneName))
-        {
-            Debug.LogError("[MenuManager] gameSceneName is empty. Set it in Inspector.");
-            return;
-        }
+        //if (string.IsNullOrEmpty(gameSceneName))
+        //{
+        //    Debug.LogError("[MenuManager] gameSceneName is empty. Set it in Inspector.");
+        //    return;
+        //}
 
         SceneManager.LoadScene(gameSceneName);
     }
+
     public void QuitGame()
     {
         Debug.Log("[MenuManager] QuitGame called.");
